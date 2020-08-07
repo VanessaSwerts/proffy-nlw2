@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
 
-        <script src="/scripts/addField.js" defer></script>
+    <script src="/scripts/addField.js" defer></script>
 </head>
 
 <body id='page-give-classes'>
@@ -26,7 +26,7 @@
 
         <header class="page-header">
             <div class="top-bar-container">
-                <a href="/src/index.html">
+                <a href="/">
                     <img src="/images/icons/back.svg" alt="Voltar">
                 </a>
                 <img src="/images/logo.svg" alt="Proffy">
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="input-block">
-                        <label for="avatar">Link dasua foto <small>(comece com https://)</small></label>
+                        <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
                         <input name="avatar" id="avatar" type="url" required>
                     </div>
 
@@ -72,17 +72,11 @@
                     <div class="select-block">
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="1">Artes</option>
-                            <option value="2">Biologia</option>
-                            <option value="3">Ciências</option>
-                            <option value="4">Educação Física</option>
-                            <option value="5">Física</option>
-                            <option value="6">Geografia</option>
-                            <option value="7">História</option>
-                            <option value="8">Matemática</option>
-                            <option value="9">Português</option>
-                            <option value="2">Química</option>
+                            {%for subject in subjects %}
+                            <option value="{{loop.index}}">
+                                {{subject}}
+                            </option>
+                            {%endfor%}
                         </select>
                     </div>
 
@@ -102,14 +96,11 @@
                         <div class="select-block">
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="0">Domingo</option>
-                                <option value="1">Segunda-feira</option>
-                                <option value="2">Terça-feira</option>
-                                <option value="3">Quarta-feira</option>
-                                <option value="4">Quinta-feira</option>
-                                <option value="5">Sexta-feira</option>
-                                <option value="6">Sábado</option>
+                                {%for weekday in weekdays %}
+                                <option value="{{loop.index0}}">
+                                    {{weekday}}
+                                </option>
+                                {%endfor%}
                             </select>
                         </div>
 
