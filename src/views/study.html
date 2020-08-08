@@ -69,30 +69,35 @@
 
         <main>
 
-            {%for proffy in proffys %}
+            {% if proffys == "" %}
+                <p class="no-results"> Nenhum professor encontrado com a sua pesquisa</p>
 
-            <article class="teacher-item">
-                <header>
-                    <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
-                    <div>
-                        <strong>{{proffy.name}}</strong>
-                        <span>{{proffy.subject}}</span>
-                    </div>
-                </header>
+            {%else%}
+                {%for proffy in proffys %}
 
-                <p>{{proffy.bio}}</p>
+                <article class="teacher-item">
+                    <header>
+                        <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
+                        <div>
+                            <strong>{{proffy.name}}</strong>
+                            <span>{{proffy.subject}}</span>
+                        </div>
+                    </header>
 
-                <footer>
-                    <p>Preço/hora<strong>R$ {{proffy.cost}} </strong>
-                    </p>
-                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse em sua aula de {{proffy.subject}} {{proffy.name}}"
-                        class="button" target="_blank"> <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em
-                        contato</a>
-                </footer>
+                    <p>{{proffy.bio}}</p>
 
-            </article>
+                    <footer>
+                        <p>Preço/hora<strong>R$ {{proffy.cost}} </strong>
+                        </p>
+                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse em sua aula de {{proffy.subject}} {{proffy.name}}"
+                            class="button" target="_blank"> <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em
+                            contato</a>
+                    </footer>
 
-            {%endfor%}
+                </article>
+
+                {%endfor%}
+            {%endif%}
 
         </main>
     </div>
