@@ -32,9 +32,18 @@ function convertHourToMinute(time) {
     return Number((hour * 60) + minutes)
 }
 
+function updateList(req) {
+    let queryString = "?subject=" + req.body.subject
+        queryString += "&weekday=" + req.body.weekday[0]
+        queryString += "&time=" + req.body.time_from[0] 
+
+    return queryString
+}
+
 module.exports = {
     subjects,
     weekdays,
     getSubject,
-    convertHourToMinute  
+    convertHourToMinute ,
+    updateList
 }

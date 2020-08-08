@@ -1,6 +1,6 @@
 const Database = require('./database/db')
 
-const { subjects, weekdays, getSubject, convertHourToMinute } = require('./utils/format')
+const { subjects, weekdays, getSubject, convertHourToMinute, updateList } = require('./utils/format')
 
 function pageLanding(req, res) {
     return res.render("index.html")
@@ -34,7 +34,7 @@ async function pageStudy(req, res) {
         const db = await Database
         const proffys = await db.all(query)
 
-        proffys.map((proffy)=> {
+        proffys.map((proffy) => {
             proffy.subject = getSubject(proffy.subject)
         })
 
@@ -75,22 +75,25 @@ async function saveClasses(req, res) {
     try {
         const db = await Database
         await createProffy(db, { proffyValue, classValue, classScheduleValues })
+                
+        queryString = updateList(req)
 
-        let queryString = "?subject=" + req.body.subject
-        queryString += "&weekday=" + req.body.weekday[0]
-        queryString += "&time=" + req.body.time_from[0]
-        return res.redirect("/study" + queryString)
+        return res.redirect("/saved-registration" + queryString)
 
     } catch (error) {
         console.log(error)
     }
+}
 
-    
+function pageSaveClasses(req, res) {
+    const filters = req.query    
+    return res.render("saved-registration.html", {filters})
 }
 
 module.exports = {
     pageLanding,
     pageStudy,
     pageGiveClasses,
-    saveClasses
+    saveClasses,
+    pageSaveClasses
 }

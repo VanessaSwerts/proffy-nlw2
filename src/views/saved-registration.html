@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8257E5">
+
+    <title>Proffy | Sua plataforma de estudos online</title>
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/partials/page-save-classes.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+    <script>
+        setTimeout(() => {
+            location.href = "/study" + "?subject={{filters.subject}}&weekday={{filters.weekday}}&time={{filters.time}}"
+        }, 2000);
+    </script>
+</head>
+
+<body id='save-classes'>
+    <div id="container">
+        <div class="title-container">
+            <img src="/images/icons/success-check-icon.svg" alt="Proffy">
+            <h1>Cadastro salvo!</h1>
+            <h2>Tudo certo, seu cadastro está na nossa lista de professores.</h2>
+            <h2>Agora é só ficar de olho no seu WhatsApp.</h2>
+
+            <div class="buttons-container">
+                <a class="access-list" href="/study">
+                    Acessar lista
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

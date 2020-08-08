@@ -1,0 +1,94 @@
+#save-classes {
+    background-color: var(--color-primary);
+    background-image: url("/images/success-background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;       
+}
+
+#save-classes #container {
+    color: var(--color-text-in-primary);   
+}
+
+.title-container {
+    text-align: center;   
+    margin-bottom: 3.2rem;      
+}
+
+ .title-container img {
+    width: 7.5rem;
+}
+
+.title-container h1 {
+    color: var(--color-title-in-primary);
+    font-family: Archivo;
+    font-weight: 700;
+    font-size: 4.0rem;
+    line-height: 2.65rem;  
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.title-container h2 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.6rem;    
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.access-list { 
+    width: 18rem;
+    height: 5.6rem;
+
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+
+    border: 0;
+    border-radius: .8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;  
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5.0rem;
+    transition: background 0.2s;      
+}
+
+.access-list:hover
+{
+    background: var(--color-secondary-dark);
+} 
+
+@media (max-width:319px){
+    :root {
+        font-size: 50%;
+    }
+} 
+
+@media (min-width: 1100px) { 
+
+    .title-container img {
+        width: 9.5rem;
+    }
+    
+    .title-container h1 {        
+        font-size: 5.0rem;         
+        margin-top: 3.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .title-container h2 {        
+        font-size: 1.6rem;        
+    }  
+
+}
+
