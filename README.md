@@ -25,10 +25,13 @@ Projeto desenvolvido durante os dias 3 a 9 de Agosto de 2020 com a trilha Discov
 ```
 git clone https://github.com/VanessaSwerts/next_level_week_2.git
 ```
+
+### Instalar dependência na pasta do arquivo 
+```
+npm install
+```
 ### Executar o comando a seguir em um terminal
 ```
  npm run dev 
  ```
 Feito isso, abra o seu navegador e acesse http://localhost:5500/
-
-
